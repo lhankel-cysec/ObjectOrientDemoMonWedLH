@@ -4,6 +4,9 @@ public class BankAccount {
     private double balance;
     private float interestRate;
 
+    public BankAccount(){
+        interestRate = 0.02f;
+    }
     public void deposit(double amount){
         balance = balance + amount;
     }
@@ -12,5 +15,15 @@ public class BankAccount {
             return false;
         balance -= amount;
         return true;
+    }
+    public double checkBalance(){
+       return balance;
+    }
+    public double addInterest(){
+        balance += balance *interestRate;
+        return balance;
+    }
+    public void printBalance(){
+        System.out.println(balance);
     }
 }
